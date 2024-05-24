@@ -1,0 +1,1346 @@
+[gd_scene load_steps=11 format=3 uid="uid://db2h3t17k37pe"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1d73w"]
+[ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
+[ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="4_nuwel"]
+[ext_resource type="PackedScene" uid="uid://bwvexjjgecvn5" path="res://Scenes/coin.tscn" id="5_188ur"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_f6bkd"]
+sky_material = SubResource("ProceduralSkyMaterial_5lq0h")
+
+[sub_resource type="Environment" id="Environment_g2h84"]
+background_mode = 2
+sky = SubResource("Sky_f6bkd")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukp3q"]
+albedo_color = Color(0.027451, 0.639216, 0.878431, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[node name="World" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.867831, -11.6791)
+material_override = ExtResource("1_o5nrg")
+use_collision = true
+size = Vector3(52.2363, 0.002, 34.0136)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
+environment = SubResource("Environment_g2h84")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Label3D" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 124.288, -302.392)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Bienvenid@ a este entorno virtual!
+
+A lo largo de este juego conoceras mas acerca del cuidado del agua, asi como tips para cuidarla.
+Gira a la derecha para ver las reglas :)"
+font_size = 48
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.46219, 121.126, -295.889)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 17.8475, 1.57837)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 118.617, -287.582)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 115.536, -280.738)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 118.617, -274.252)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 118.617, -274.252)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 118.617, -274.252)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 115.691, -266.727)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.206, 121.121, -289.362)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(30.5482, 11.1092, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.0851, 121.101, -289.421)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(31.0979, 11.0695, 1)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 115.536, -265.258)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 115.543, -266.727)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 115.432, -266.727)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 117.471, -271.416)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 109.759, -267.008)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 14.3888, 1.57837)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 95.5199, -234.654)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 92.4385, -227.81)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 95.5199, -221.324)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 95.5199, -221.324)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 95.5199, -221.324)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 92.5937, -213.799)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 98.8661, -228.302)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 97.6713, -227.901)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 92.4385, -212.33)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 92.4462, -213.799)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 92.3354, -213.799)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 94.3736, -218.488)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 86.6624, -214.499)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 89.5424, -221.491)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 92.5651, -213.799)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 83.9054, -208.024)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 80.8241, -201.181)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 83.9054, -194.694)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 83.9054, -194.694)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 83.9054, -194.694)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 80.9792, -187.169)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 87.2517, -201.672)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 86.0568, -201.271)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 80.8241, -185.701)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 80.8318, -187.169)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 80.7209, -187.169)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 82.7591, -191.858)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 75.0479, -187.869)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 77.928, -194.862)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 80.9507, -187.169)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 72.3461, -181.766)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D47" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 69.2648, -174.923)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D48" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 72.3461, -168.436)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D49" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 72.3461, -168.436)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D50" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 72.3461, -168.436)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D51" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 69.4199, -160.911)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D52" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 75.6923, -175.414)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D53" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 74.4975, -175.013)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D54" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 69.2648, -159.443)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D55" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 69.2724, -160.911)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D56" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 69.1616, -160.911)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D57" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 71.1998, -165.6)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D58" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 63.4886, -161.611)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D59" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 66.3686, -168.604)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D60" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 69.3913, -160.911)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D61" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 49.3573, -130.669)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D62" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 46.276, -123.825)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D63" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 49.3573, -117.339)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D64" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 49.3573, -117.339)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D65" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 49.3573, -117.339)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D66" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 46.4311, -109.814)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D67" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 52.7035, -124.316)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D68" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 51.5087, -123.916)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D69" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 46.276, -108.345)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D70" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 46.2836, -109.814)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D71" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 46.1728, -109.814)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D72" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 48.211, -114.503)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D73" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 40.4998, -110.514)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D74" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 43.3798, -117.506)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D75" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 46.4025, -109.814)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D76" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 37.8287, -104.898)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D77" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 34.7474, -98.0538)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D78" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 37.8287, -91.5671)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D79" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 37.8287, -91.5671)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D80" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 37.8287, -91.5671)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D81" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 34.9026, -84.0421)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D82" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 41.175, -98.5448)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D83" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 39.9802, -98.1448)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D84" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 34.7474, -82.5737)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D85" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 34.7551, -84.0421)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D86" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 34.6443, -84.0421)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D87" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 36.6825, -88.7309)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D88" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 28.9713, -84.7424)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D89" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 31.8513, -91.7347)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D90" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 34.874, -84.0421)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D91" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 26.2945, -78.8133)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D92" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 23.2132, -71.9694)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D93" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 26.2945, -65.4829)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D94" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 26.2945, -65.4829)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D95" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 26.2945, -65.4829)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D96" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 23.3684, -57.9579)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D97" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 29.6408, -72.4606)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D98" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 28.446, -72.0602)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D99" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 23.2132, -56.4895)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D100" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 23.2209, -57.9579)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D101" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 23.1101, -57.9579)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D102" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 25.1482, -62.6467)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D103" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 17.4371, -58.6582)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D104" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 20.3171, -65.6505)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D105" type="CSGBox3D" parent="Map"]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 23.3398, -57.9579)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="Label3D2" type="Label3D" parent="Map"]
+transform = Transform3D(0.00404912, 0, -0.999992, 0, 1, 0, 0.999992, 0, 0.00404912, 12.494, 124.548, -296.867)
+modulate = Color(0.796078, 0.843137, 1, 1)
+text = "Reglas:
+
+En cada plataforma se te preguntara acerca del tema
+
+Tendras que elegir una respuesta, bajando por su lugar correspondiente, ganaras una moneda por cada respuesta correcta.
+
+¡Suerte!
+
+PD: Podras ver tips para cuidar el agua volteando atras antes de elegir respuesta "
+font_size = 48
+
+[node name="Label3D3" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 118.079, -286.938)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Cierra la llave del agua mientras te cepillas los dientes o te afeitas."
+font_size = 48
+
+[node name="Label3D4" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 106.943, -259.306)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Recolecta y utiliza agua de lluvia para regar las plantas."
+font_size = 48
+
+[node name="Label3D5" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 118.079, -286.938)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Cierra la llave del agua mientras te cepillas los dientes o te afeitas."
+font_size = 48
+
+[node name="Label3D6" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 95.1644, -232.116)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Reutiliza el agua de cocinar para regar plantas o limpiar."
+font_size = 48
+
+[node name="Label3D7" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 83.9613, -206.973)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Revisa y repara las fugas en tu hogar para evitar el desperdicio de agua"
+font_size = 48
+
+[node name="Label3D8" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 72.7004, -181.12)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Utiliza electrodomésticos eficientes y con carga completa para ahorrar agua."
+font_size = 48
+
+[node name="Label3D9" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 59.2165, -156.425)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No tires basura ni sustancias químicas en fuentes de agua."
+font_size = 48
+
+[node name="Label3D10" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 48.6191, -129.137)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Elige productos de limpieza y cuidado personal biodegradables."
+font_size = 48
+
+[node name="Label3D11" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 36.658, -104.104)
+modulate = Color(0.796078, 1, 1, 1)
+text = "En lugar de usar una manguera, usa baldes para lavar el coche:"
+font_size = 48
+
+[node name="Label3D12" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 26.187, -78.179)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Riega las plantas en la mañana o al atardecer."
+font_size = 48
+
+[node name="Label3D13" type="Label3D" parent="Map"]
+transform = Transform3D(0.99985, 0, 0.0173303, 0, 1, 0, -0.0173303, 0, 0.99985, -1.35844, 14.4588, -52.1242)
+modulate = Color(0.796078, 1, 1, 1)
+text = "En lugar de usar una manguera para limpiar aceras, utiliza una escoba para limpiar exteriores: "
+font_size = 48
+
+[node name="Label3D14" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -0.822442, 118.079, -275.175)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Cuánta agua dulce está disponible 
+para el uso humano en el planeta?"
+font_size = 48
+
+[node name="Label3D15" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -0.862255, 106.776, -247.899)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Cómo podemos contribuir 
+individualmente al cuidado del agua?"
+font_size = 48
+
+[node name="Label3D16" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -0.635004, 94.8224, -221.891)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Qué actividad humana es la que 
+más consume agua?"
+font_size = 48
+
+[node name="Label3D17" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -1.27675, 71.0691, -169.559)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Qué consecuencias tiene la escasez 
+de agua para el medio ambiente?"
+font_size = 48
+
+[node name="Label3D18" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -0.887587, 59.7882, -144.419)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Por qué es importante tratar 
+las aguas residuales?"
+font_size = 48
+
+[node name="Label3D19" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -1.22671, 48.643, -117.99)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Qué efectos tiene el cambio 
+climático en el ciclo del agua?"
+font_size = 48
+
+[node name="Label3D20" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -1.35844, 36.7605, -92.4756)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Qué es el ciclo del agua y 
+por qué es importante?"
+font_size = 48
+
+[node name="Label3D21" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -1.17006, 25.6947, -67.1118)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Cómo afecta el consumo 
+excesivo de agua en una 
+región a otras regiones?"
+font_size = 48
+
+[node name="Label3D22" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -0.834045, 14.8457, -40.1298)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Qué relación hay entre el 
+consumo de agua y la 
+producción de alimentos?"
+font_size = 48
+
+[node name="Label3D23" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -7.60311, 118.079, -272.199)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Solamente el 2.5%"
+font_size = 48
+
+[node name="Label3D24" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.13422, 113.555, -267.402)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Incorrecto. 
+Aunque el 97.5% del agua
+está en los océanos, solo el 2.5% es agua dulce 
+accesible para nosotros."
+font_size = 48
+
+[node name="Label3D25" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -7.40073, 113.36, -267.402)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Correcto! Solo el 2.5% del 
+agua en nuestro planeta es 
+dulce y disponible para uso humano. 
+Es vital conservarla."
+font_size = 48
+
+[node name="Label3D26" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.22248, 106.776, -244.992)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Usando dispositivos ahorradores de agua en casa"
+font_size = 48
+
+[node name="Label3D27" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -7.91519, 106.776, -244.992)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Dejando la llave  abierta todo el tiempo"
+font_size = 48
+
+[node name="Label3D28" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 5.98071, 101.79, -235.952)
+modulate = Color(0.796078, 1, 1, 1)
+text = "“¡Correcto!
+Usar dispositivos ahorradores de agua 
+en casa es una excelente manera 
+de contribuir al cuidado del agua."
+font_size = 48
+
+[node name="Label3D29" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.20024, 101.79, -235.952)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Error: 
+Esa no es la forma de conservar. Dejar el grifo 
+abierto desperdicia una cantidad 
+significativa de agua."
+font_size = 48
+
+[node name="Label3D30" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.72823, 94.8224, -219.173)
+modulate = Color(0.796078, 1, 1, 1)
+text = "El uso residencial"
+font_size = 48
+
+[node name="Label3D31" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.28169, 94.8224, -219.173)
+modulate = Color(0.796078, 1, 1, 1)
+text = "La agricultura"
+font_size = 48
+
+[node name="Label3D32" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.28169, 90.4892, -213.921)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Correcto! 
+La agricultura es la actividad que más agua consume, 
+por lo que es importante implementar 
+prácticas de riego eficientes"
+font_size = 48
+
+[node name="Label3D33" type="Label3D" parent="Map"]
+transform = Transform3D(-0.997025, 0, 0.0770845, 0, 1, 0, -0.0770845, 0, -0.997025, 5.49558, 90.4892, -213.921)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Incorrecto. 
+Aunque el uso residencial consume agua, 
+la agricultura es la que más utiliza este recurso."
+font_size = 48
+
+[node name="Label3D34" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -7.91932, 82.8242, -193.115)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Reduce la recarga natural del agua"
+font_size = 48
+
+[node name="Label3D35" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.14133, 82.9736, -193.115)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Aumenta la regeneracion de agua"
+font_size = 48
+
+[node name="Label3D36" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.14133, 77.7877, -186.581)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No es así. La sobreexplotación de acuíferos 
+amenaza la sostenibilidad del suministro de agua."
+font_size = 48
+
+[node name="Label3D37" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -7.63071, 77.6582, -186.581)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Correcto! 
+La sobreexplotación reduce la recarga natural 
+y puede llevar a la escasez de agua."
+font_size = 48
+
+[node name="Label3D38" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.62091, 71.0691, -166.57)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Aumento de la biodiversidad"
+font_size = 48
+
+[node name="Label3D39" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.22311, 71.0691, -166.355)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Pérdida de hábitats y especies"
+font_size = 48
+
+[node name="Label3D40" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.22311, 66.5727, -158.032)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Exacto! 
+La escasez de agua puede llevar a la pérdida de 
+hábitats y especies, afectando la biodiversidad."
+font_size = 48
+
+[node name="Label3D41" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.42115, 65.8299, -158.032)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No es así. 
+La escasez de agua tiene graves consecuencias 
+para el medio ambiente, incluyendo la pérdida de 
+biodiversidad"
+font_size = 48
+
+[node name="Label3D42" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.58084, 59.7882, -141.673)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No es importante, se pueden verter directamente a ríos y mares"
+font_size = 48
+
+[node name="Label3D43" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.31353, 59.7882, -141.673)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Para poder reutilizarlas en actividades agrícolas e industriales"
+font_size = 48
+
+[node name="Label3D44" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.31353, 55.5562, -135.339)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Bien hecho! 
+Tratar las aguas residuales permite su reutilización y 
+protege los ecosistemas acuáticos."
+font_size = 48
+
+[node name="Label3D45" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -9.2249, 54.5096, -133.082)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Incorrecto. 
+Las aguas residuales deben tratarse antes de 
+ser vertidas para evitar la contaminación."
+font_size = 48
+
+[node name="Label3D46" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.2305, 48.643, -115.259)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No tiene ningún efecto"
+font_size = 48
+
+[node name="Label3D47" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.33593, 48.643, -115.259)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Puede alterar las precipitaciones 
+y aumentar la frecuencia de sequías e inundaciones"
+font_size = 48
+
+[node name="Label3D48" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.33593, 43.4015, -105.471)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Correcto!
+El cambio climático puede alterar el ciclo del agua, 
+causando sequías e inundaciones más frecuentes."
+font_size = 48
+
+[node name="Label3D49" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -9.42175, 43.4015, -105.471)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Esa respuesta no es correcta. 
+El cambio climático tiene un impacto 
+significativo en el ciclo del agua."
+font_size = 48
+
+[node name="Label3D50" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.29118, 36.7605, -89.2969)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Es un proceso continuo que mantiene el equilibrio
+ambiental de nuestro planeta"
+font_size = 48
+
+[node name="Label3D51" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.53254, 36.7605, -89.2969)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Es un proceso donde el agua se congela 
+y se derrite constantemente"
+font_size = 48
+
+[node name="Label3D52" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.53254, 32.1599, -81.0921)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No es correcto. El ciclo del agua es más que congelación y 
+derretimiento; es esencial para el equilibrio del planeta."
+font_size = 48
+
+[node name="Label3D53" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -7.90891, 32.1599, -81.0921)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Exacto!
+El ciclo del agua es un proceso continuo que 
+mantiene el equilibrio ambiental y es vital para 
+la vida en la Tierra."
+font_size = 48
+
+[node name="Label3D54" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.2028, 25.6947, -63.3464)
+modulate = Color(0.796078, 1, 1, 1)
+text = "No afecta, cada región tiene su propio suministro de agua"
+font_size = 48
+
+[node name="Label3D55" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.32609, 25.6947, -63.3464)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Puede causar desequilibrios y escasez en otras regiones"
+font_size = 48
+
+[node name="Label3D56" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.26484, 19.9439, -53.9678)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Bien hecho! 
+El consumo excesivo de agua en una región puede 
+causar desequilibrios y escasez en otras regiones"
+font_size = 48
+
+[node name="Label3D57" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.3328, 19.9439, -53.9678)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Incorrecto.
+El uso excesivo de agua en una región sí afecta a 
+otras, pudiendo causar escasez y desequilibrios."
+font_size = 48
+
+[node name="Label3D58" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -8.43727, 14.8457, -37.1101)
+modulate = Color(0.796078, 1, 1, 1)
+text = "La producción de alimentos, 
+ayuda a producir grandes cantidades de agua."
+font_size = 48
+
+[node name="Label3D59" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999895, 0, 0.0145206, 0, 1, 0, -0.0145206, 0, -0.999895, 6.20754, 14.8457, -37.4384)
+modulate = Color(0.796078, 1, 1, 1)
+text = "La producción de alimentos, 
+requiere grandes cantidades de agua."
+font_size = 48
+
+[node name="Label3D60" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999895, 0, 0.0145206, 0, 1, 0, -0.0145206, 0, -0.999895, 6.20754, 9.80133, -28.509)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¡Correcto!
+La producción de alimentos, especialmente 
+la carne y los lácteos, requiere grandes cantidades de agua."
+font_size = 48
+
+[node name="Label3D61" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999895, 0, 0.0145206, 0, 1, 0, -0.0145206, 0, -0.999895, -7.87968, 9.80133, -28.509)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Incorrecto. 
+La agricultura y la ganadería son actividades que
+ consumen una cantidad significativa de agua."
+font_size = 48
+
+[node name="Label3D62" type="Label3D" parent="Map"]
+transform = Transform3D(-0.999895, 0, 0.0145206, 0, 1, 0, -0.0145206, 0, -0.999895, 0.237772, 0.28139, -15.1028)
+modulate = Color(0.796078, 1, 1, 1)
+text = "El agua es la esencia de la vida, no solo un recurso vital para la 
+humanidad, sino también el corazón de todos los ecosistemas. 
+Cuidarla no es solo una responsabilidad, sino una necesidad urgente 
+para asegurar un futuro sostenible. Cada gota cuenta, y cada acción 
+que tomamos hoy se refleja en el mundo que dejamos para las 
+generaciones venideras. Proteger el agua es proteger la vida misma."
+font_size = 48
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63149, 122.006, -301.877)
+script = ExtResource("1_1d73w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.834305, 4.20114)
+mesh = SubResource("CapsuleMesh_xc2g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833672, 4.20114)
+shape = SubResource("CapsuleShape3D_wydro")
+
+[node name="Head" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62587, 4.01181)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.676735, -0.293793)
+
+[node name="coin" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12087, 110.932, -261.57)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 112.639, -274.419)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 123.501, -304.441)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.12785, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 115.662, -266.727)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 107.588, -260.54)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 5.91826, 1)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 104.598, -253.696)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 107.679, -247.21)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 107.679, -247.21)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 107.679, -247.21)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 104.753, -239.685)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 110.086, -254.187)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 10.9141, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 110.223, -253.787)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 11.1897, 1)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 104.598, -238.216)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 104.606, -239.685)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 104.495, -239.685)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 106.533, -244.374)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 98.8219, -240.385)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 101.702, -247.377)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 104.725, -239.685)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 60.8613, -157.047)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 57.78, -150.203)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 60.8613, -143.717)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 60.8613, -143.717)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 60.8613, -143.717)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 57.9351, -136.191)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 64.2075, -150.694)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 63.0127, -150.294)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 57.78, -134.723)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 57.7876, -136.191)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 57.6768, -136.191)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 59.715, -140.88)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 52.0038, -136.892)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 54.8838, -143.884)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 57.9065, -136.191)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 14.8008, -52.6964)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 12.2473, -45.8525)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.8156, 1.57837)
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4365, 15.3286, -39.366)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(4.46697, 6.10117, 1)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8481, 15.3286, -39.366)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(5.30437, 6.10117, 1)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994288, 15.3286, -39.366)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(6.8278, 6.10117, 1)
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 1.96304, 12.4024, -31.8409)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 11.9535, 1)
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 14.0994, 18.6748, -46.3436)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(14.2824, 12.7937, 1)
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -17.1977, 17.48, -45.9433)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(13.9132, 10.4041, 1)
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 12.2473, -30.3725)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -12.8811, 12.255, -31.8409)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.2484, 1)
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, 10.5836, 12.1441, -31.8409)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.4701, 1)
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 14.1823, -36.5298)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D47" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, -1.462, 6.47111, -32.5413)
+material_override = ExtResource("4_nuwel")
+use_collision = true
+size = Vector3(32.1329, 13.552, 1.57837)
+
+[node name="CSGBox3D48" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41519, 9.35116, -39.5335)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(32.1703, 6.10117, 1)
+
+[node name="CSGBox3D49" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.013107, 0, -0.999914, 0, 1, 0, 0.999914, 0, -0.013107, -4.00778, 12.3739, -31.8409)
+material_override = SubResource("StandardMaterial3D_ukp3q")
+size = Vector3(15.6937, 12.0106, 1)
+
+[node name="coin2" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.99497, 99.8662, -234.268)
+
+[node name="coin3" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5147, 87.894, -208.382)
+
+[node name="coin4" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.62359, 76.1444, -181.343)
+
+[node name="coin5" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26455, 64.8, -157.182)
+
+[node name="coin6" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29628, 53.1098, -131.289)
+
+[node name="coin7" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08431, 41.5889, -104.208)
+
+[node name="coin8" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.41325, 30.0857, -78.4066)
+
+[node name="coin9" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46162, 18.6193, -52.41)
+
+[node name="coin10" parent="." instance=ExtResource("5_188ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08431, 7.64394, -27.2127)
+
+[node name="Label3D16" type="Label3D" parent="."]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, -0.718706, 82.7767, -195.367)
+modulate = Color(0.796078, 1, 1, 1)
+text = "¿Cómo afecta la 
+sobreexplotación de 
+acuíferos a la 
+disponibilidad de agua?"
+font_size = 48
+
+[node name="Label3D14" type="Label3D" parent="."]
+transform = Transform3D(-0.999954, 0, 0.0096166, 0, 1, 0, -0.0096166, 0, -0.999954, 6.13422, 118.079, -272.199)
+modulate = Color(0.796078, 1, 1, 1)
+text = "Aproximadamente el 97.5%"
+font_size = 48
